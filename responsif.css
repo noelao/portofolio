@@ -144,7 +144,6 @@
                     .wadah {
                         font-size: .8rem;
                         width: 100%;
-                        background-color: #fff;
                         padding: 1rem 0;
                         .dataProject {
                             padding: 1rem;
@@ -157,6 +156,10 @@
                                 .arrowJudul2 {
                                     height: 1rem;
                                 }
+                            }
+                            .gambar {
+                                main-height: 8rem;
+                                height: 8rem;
                             }
                             .dependency {
                                 margin-top: 1rem;
@@ -181,6 +184,27 @@
         font-size: .7rem;
     }
 
+    .contactMe {
+        font-size: .7rem;
+        .wrapper {
+            .gambaran {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                .gambar {
+                    .kotak {
+                        height: 4rem;
+                        border-radius: 12px;
+                        aspect-ratio: 1;;
+                    }
+                    .kotak::before {
+                    }
+                    .coba {
+                    }
+                }
+            }
+        }
+    }
     
     footer {
         .wrapper {

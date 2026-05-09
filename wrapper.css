@@ -1,5 +1,5 @@
 .dataProject {
-    color: var(--terang);
+    color: var(--gelap);
     display: flex;
     flex-direction: column;
 
@@ -10,7 +10,7 @@
             display: flex;
             gap: 1rem;
             h1 {
-                color: var(--terang);
+                color: var(--gelap);
             }
             .arrowJudul2 {
                 display: flex;
@@ -38,27 +38,60 @@
     }
 
     .gambar {
+        main-height: 19rem;
+        height: 19rem;
+
+        overflow: hidden;
         width: 100%;
+
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        img {
+
+        cursor: cell;
+
+        .gradasi {
+            height: 100%;
+            position: absolute;;
             width: 100%;
+
+            background: linear-gradient(to bottom, transparent, transparent, transparent, rgba(0,0,0,0.7));
+            z-index: 1;
+        }
+        img {
+            position: absolute;
+            width: 100%;
+
+            top: 50%;
+            transform: translateY(-50%);
+            transition: top .7s linear, transform .7s linear;
+        }
+        .gradasi:hover {
+            background: linear-gradient(to bottom, transparent, transparent, transparent);
         }
     }
+    .gambar:hover {
+        img {
+            top: 0%;
+            transform: translateY(0);
+        }
+    }
+
     .dependency {
         display: flex;
+        margin: .5rem 0;
         .icon {
             display: flex;
-
             height: 1rem;
+            gap: .1rem;
             img {
                 height: 2rem;
             }
         }
     }
 }
+
 
 @media screen and (max-width:456px) {
     .dataProject {

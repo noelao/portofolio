@@ -13,7 +13,7 @@
         "name":"buatSvg",
         "deskripsi":"website untuk membuat design manual dengan bahasa Svg dasar",
         "dependency":["express", "ejs", "supabase"],
-        "language":["html", "css", "javascript", "node"],
+        "language":["html", "css", "javascript", "nodejs"],
         "image":"./project/image/buatSvg.png",
         "link":"https://svg-noelao.vercel.app/"
     }
