@@ -53,7 +53,7 @@
                     <div class="subJudul" style="border-color: var();">
                         <!-- <p>im a freelancer, what i can do is make a front end design, make a game with godot, create a pixel animation, and more if you want me to push my luck.</p> -->
                         <p>i do coding and developer stuf.</p>
-                        <p>do design, write html css styling, handle api and database with <strong style="color: rgb(129, 207, 255);">react next</strong> and <strong style="color: #ed9981;">ejs express.</strong></p>
+                        <p>do <span class="code">design</span>, write html css styling, handle api and database with <strong style="color: rgb(129, 207, 255);">react next</strong> and <strong style="color: #ed9981;">ejs express.</strong></p>
                         <p>i realy love java-script.</p>
                         
                         
@@ -652,11 +652,11 @@
                                     ${ini.deskripsi}
                                 </small>
                             </div>
-                            <div class="gambar">
+                            <div class="gambar gaambar">
                                 <div class="gradasi">
                                 </div>
                                     
-                                <img src="${ini.image}" alt="">
+                                <img src="${ini.image}" id="gambarProject" alt="">
                             </div>
                             <div class="dependency">
                                 <h3>dependency : </h3>
@@ -670,6 +670,53 @@
                     }).join(" ");
 
                     wrapper.innerHTML = inian;
+
+                    const fotoanProject = document.querySelectorAll("#gambarProject");
+                    
+
+                    const arrayFalse = new Array(fotoanProject.length).fill(false);
+
+                    function perbesarGambarProject(event){
+                        const elementClick = event.currentTarget;
+
+                        
+                        const nilaiA = parseInt(elementClick.dataset.indexSaya);
+                        console.log(nilaiA);
+                        if(arrayFalse[nilaiA]){
+                            
+                            console.log(elementClick);
+                            elementClick.style.height = "var(--tinggiGambarProyek)";
+                            elementClick.classList.add("gambar");
+                            arrayFalse[nilaiA] = !arrayFalse[nilaiA];
+                        }else {
+                            
+                            console.log(elementClick);
+                            elementClick.style.height = "auto";
+                            elementClick.classList.remove("gambar");
+                            arrayFalse[nilaiA] = !arrayFalse[nilaiA];
+                        }
+
+                    }
+
+
+                    fotoanProject.forEach((proyek, a) => {
+                        const parent = proyek.parentElement;
+    
+                        // Titipkan nilai 'a' ke dalam atribut 'data-index-saya' di HTML
+                        parent.dataset.indexSaya = a; 
+                        
+                        // Tambahkan event listener (hanya panggil nama fungsinya)
+                        parent.addEventListener('click', perbesarGambarProject);
+                    });
+                    
+
+                    // kalau butuh
+                    function hapusEvent() {
+                        fotoanProject.forEach((proyek) => {
+                            proyek.parentElement.removeEventListener('click', perbesarGambarProject);
+                        });
+                    }
+
                 }, 1000);
 
             }

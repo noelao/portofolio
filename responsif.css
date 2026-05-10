@@ -158,8 +158,9 @@
                                 }
                             }
                             .gambar {
-                                main-height: 8rem;
-                                height: 8rem;
+                                --tinggiGambarProyek: 10rem;
+                                min-height: var(--tinggiGambarProyek);
+                                height: var(--tinggiGambarProyek);
                             }
                             .dependency {
                                 margin-top: 1rem;
@@ -207,9 +208,13 @@
     }
     
     footer {
+        font-size: .8rem;
+        height: 620px;
+
         .wrapper {
             flex-direction: column;
             gap: 55px;
+            height: 500px;
 
             .kiri {
                 width: 100%;
@@ -243,6 +248,8 @@
             }
             .kanan {
                 width: 100%;
+                padding: 0;
+                flex-direction: row;
 
                 margin-bottom: 100px;
             }
